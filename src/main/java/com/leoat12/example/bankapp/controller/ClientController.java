@@ -8,6 +8,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/client")
@@ -17,6 +18,19 @@ public class ClientController {
 
     public ClientController(ClientService clientService){
         this.clientService = clientService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Client>> findAll(){
+        if(true)
+            throw new UnsupportedOperationException();
+
+        return ResponseEntity.status(200).body(clientService.findAll());
+    }
+
+    @GetMapping("/{document}")
+    public ResponseEntity<Client> findById(@PathVariable("document") String document){
+        return ResponseEntity.status(200).body(clientService.findById(document));
     }
 
     @PostMapping

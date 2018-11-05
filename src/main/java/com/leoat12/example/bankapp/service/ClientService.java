@@ -6,6 +6,9 @@ import com.leoat12.example.bankapp.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.websocket.ClientEndpoint;
+import java.util.List;
+
 @Service
 public class ClientService {
 
@@ -23,5 +26,13 @@ public class ClientService {
             throw new ResourceNotFoundException("The client must exist to be updated");
 
         return clientRepository.save(client);
+    }
+
+    public List<Client> findAll() {
+        return clientRepository.findAll();
+    }
+
+    public Client findById(String document) {
+        return clientRepository.findByDocument(document).orElseThrow(() -> new ResourceNotFoundException(document));
     }
 }
