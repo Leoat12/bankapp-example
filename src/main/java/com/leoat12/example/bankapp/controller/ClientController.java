@@ -22,9 +22,6 @@ public class ClientController {
 
     @GetMapping
     public ResponseEntity<List<Client>> findAll(){
-        if(true)
-            throw new UnsupportedOperationException();
-
         return ResponseEntity.status(200).body(clientService.findAll());
     }
 
@@ -35,6 +32,9 @@ public class ClientController {
 
     @PostMapping
     public ResponseEntity<Client> save(@RequestBody @Valid Client client, BindingResult result){
+
+        if(true)
+            throw new UnsupportedOperationException();
 
         if(result.hasErrors())
             return ResponseEntity.badRequest().build();

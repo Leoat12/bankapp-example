@@ -1,6 +1,9 @@
 package com.leoat12.example.bankapp;
 
 import com.leoat12.example.bankapp.exception.ResourceNotFoundException;
+import io.sentry.Sentry;
+import io.sentry.event.Breadcrumb;
+import io.sentry.event.BreadcrumbBuilder;
 import io.sentry.spring.SentryExceptionResolver;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,6 +14,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class BankappApplication {
