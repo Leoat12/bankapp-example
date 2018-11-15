@@ -3,6 +3,7 @@ package com.leoat12.example.bankapp.controller;
 import com.leoat12.example.bankapp.exception.ResourceNotFoundException;
 import com.leoat12.example.bankapp.model.Client;
 import com.leoat12.example.bankapp.service.ClientService;
+import org.apache.logging.log4j.ThreadContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;

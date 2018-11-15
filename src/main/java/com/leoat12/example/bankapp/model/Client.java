@@ -4,6 +4,7 @@ import com.leoat12.example.bankapp.utils.DocumentUtils;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "client")
 @Getter @Setter @NoArgsConstructor
+@ToString
 public class Client implements Serializable {
 
     @Id
