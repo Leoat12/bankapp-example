@@ -1,8 +1,8 @@
 package com.leoat12.example.bankapp.aspect;
 
+import io.sentry.Sentry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.ThreadContext;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -26,7 +26,7 @@ public class LoggerAspect {
         }
 
         if(body != null){
-            ThreadContext.put("body", body.toString());
+            Sentry.getContext().addExtra("body", body);
         }
 
         logger.info("Aspect finished...");
