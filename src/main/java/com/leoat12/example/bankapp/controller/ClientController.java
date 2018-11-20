@@ -34,9 +34,6 @@ public class ClientController {
     @PostMapping
     public ResponseEntity<Client> save(@RequestBody @Valid Client client, BindingResult result){
 
-        if(true)
-            throw new UnsupportedOperationException();
-
         if(result.hasErrors())
             return ResponseEntity.badRequest().build();
 
