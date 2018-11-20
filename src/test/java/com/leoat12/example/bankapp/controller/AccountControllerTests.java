@@ -77,6 +77,7 @@ public class AccountControllerTests {
     public void shouldReturn400ForAccountWithAnyNullField(){
         Account account = new Account();
         account.setClient(client);
+        account.setAgency(agency);
         account.setBalance(50.0);
         account.setType(Account.AccountType.COMMON);
 
